@@ -1,0 +1,4 @@
+[
+    {secure_message_form, ["secure", "msg"], controller_template, [{template, "page_secure_message.tpl"}, {ssl, true}]},
+    {secure_message_view, ["secure", "msg", key, signature], controller_template, [{template, "page_secure_message.tpl"}, {ssl, true}]}
+].

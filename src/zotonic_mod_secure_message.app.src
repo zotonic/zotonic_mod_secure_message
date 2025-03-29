@@ -1,0 +1,15 @@
+{application, zotonic_mod_secure_message, [
+    {description, "Secure Message viewing and relay"},
+    {vsn, "git"},
+    {registered, []},
+    {applications, [
+        kernel, stdlib,
+        zotonic_stdlib,
+        zotonic_core
+    ]},
+    {env, []},
+    {modules, []},
+    {maintainers, []},
+    {licenses, ["Apache-2.0"]},
+    {links, [{"GitHub", "https://github.com/zotonic/zotonic_mod_secure_message"}]}
+]}.

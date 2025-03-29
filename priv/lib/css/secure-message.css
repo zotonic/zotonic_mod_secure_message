@@ -1,0 +1,23 @@
+.secure-message {
+    margin: 1em 0 2em 0;
+}
+.secure-message-header {
+    padding: 20px 10px;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    background-color: #fdfdfd;
+    margin-bottom: 0;
+}
+
+.secure-message-header > span.text-muted {
+    margin-right: 0.5em;
+}
+
+.secure-message-body {
+    padding: 20px 10px 10px 10px;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+    margin: 0 0 5px 0;
+    background-color: #fdfdfd;
+}
+

@@ -1,0 +1,227 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# NB: Consider using poEdit <http://poedit.sourceforge.net>
+#
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ./user/modules/mod_secure_message/mod_secure_message.erl:108 
+msgid ""
+"Could not open this email. Please reload the page and retry."
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:46 
+msgid ""
+"Country"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/page_secure_message.tpl:19 
+msgid ""
+"Date"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/page_secure_message.tpl:63 
+msgid ""
+"Deleted"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/page_secure_message.tpl:54 
+msgid ""
+"Either the link you tried is wrong or the message has been deleted."
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:38 
+msgid ""
+"Email"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:28 
+msgid ""
+"First name"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/page_secure_message.tpl:32 
+msgid ""
+"First view."
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/email_secure_message.tpl:17 
+msgid ""
+"For your security, our message will be deleted in 7 days. Please check the "
+"link above as soon as possible."
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/page_secure_message.tpl:18 
+msgid ""
+"From"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/email_secure_message.tpl:3 
+msgid ""
+"Hello from"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/email_secure_message.tpl:8 
+msgid ""
+"Hi,"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:14 
+msgid ""
+"Message"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:33 
+msgid ""
+"Nickname, or name you want us to call you."
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/page_secure_message.tpl:53 
+msgid ""
+"Not Found"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:42 
+msgid ""
+"On a reply, you will receive a link to this site."
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/email_secure_message.tpl:13 
+msgid ""
+"Please go to the link below for the information that you requested."
+msgstr ""
+
+#: ./user/modules/mod_secure_message/mod_secure_message.erl:110 
+msgid ""
+"Reload"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:12 
+msgid ""
+"Reply"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/page_secure_message.tpl:9 
+msgid ""
+"Secure message"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:76 
+msgid ""
+"Send &amp; Delete Message"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:78 
+msgid ""
+"Send Message"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:75 
+msgid ""
+"Send Reply"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/mod_secure_message.erl:49 
+msgid ""
+"Sorry, could not delete the message"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:59 
+msgid ""
+"State"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/page_secure_message.tpl:20 
+msgid ""
+"Subject"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:86 
+msgid ""
+"Thank you."
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/email_secure_message.tpl:19 
+msgid ""
+"Thanks."
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/page_secure_message.tpl:35 
+msgid ""
+"This message will be deleted in"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/email_secure_message.tpl:11 
+msgid ""
+"To protect your privacy, we have answered your question at a safe place "
+"for you to read."
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/email_secure_message.tpl:26 
+msgid ""
+"You can not reply to this email. Please reply at the link in the message."
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/page_secure_message.tpl:47 
+msgid ""
+"You can’t reply directly to this message."
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/page_secure_message.tpl:14 
+msgid ""
+"You received a message:"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/email_secure_message.tpl:10 
+msgid ""
+"You recently sent a question to our service."
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/email_secure_message.tpl:27 
+msgid ""
+"Your email address will be automatically removed from our messaging "
+"service."
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/page_secure_message.tpl:64 
+msgid ""
+"Your message has been deleted."
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:87 
+msgid ""
+"Your message has been sent, we will contact you as soon as possible."
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:21 
+msgid ""
+"Your reply will be forwarded to"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/page_secure_message.tpl:30 
+msgid ""
+"ago"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/page_secure_message.tpl:36 
+msgid ""
+"delete now"
+msgstr ""
+
+#: ./user/modules/mod_secure_message/templates/page_secure_message.tpl:30 
+msgid ""
+"viewed since"
+msgstr ""

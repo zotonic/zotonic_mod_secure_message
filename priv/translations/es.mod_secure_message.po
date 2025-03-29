@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# NB: Consider using poEdit <http://poedit.sourceforge.net>
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-04-26 13:00+0200\n"
+"PO-Revision-Date: 2017-04-26 13:00+0200\n"
+"Last-Translator: Marc Worrell <marc@worrell.nl>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.1\n"
+
+#: user/modules/mod_secure_message/mod_secure_message.erl:108
+msgid "Could not open this email. Please reload the page and retry."
+msgstr ""
+"No se pudo abrir este correo electrónico. Por favor volver a cargar la "
+"página y vuelva a intentarlo."
+
+#: user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:46
+msgid "Country"
+msgstr "País"
+
+#: user/modules/mod_secure_message/templates/page_secure_message.tpl:19
+msgid "Date"
+msgstr "Fecha"
+
+#: user/modules/mod_secure_message/templates/page_secure_message.tpl:63
+msgid "Deleted"
+msgstr "Eliminado"
+
+#: user/modules/mod_secure_message/templates/page_secure_message.tpl:54
+msgid "Either the link you tried is wrong or the message has been deleted."
+msgstr "El enlace que has probado es incorrecto o se ha eliminado el mensaje."
+
+#: user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:38
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:28
+msgid "First name"
+msgstr "Primer nombre"
+
+#: user/modules/mod_secure_message/templates/page_secure_message.tpl:32
+msgid "First view."
+msgstr "Primer punto de vista."
+
+#: user/modules/mod_secure_message/templates/email_secure_message.tpl:17
+msgid ""
+"For your security, our message will be deleted in 7 days. Please check the "
+"link above as soon as possible."
+msgstr ""
+"Por tu seguridad, nuestro mensaje será borrado en 7 días. Por favor entra al "
+"enlace lo más pronto posible."
+
+#: user/modules/mod_secure_message/templates/page_secure_message.tpl:18
+msgid "From"
+msgstr "De"
+
+#: user/modules/mod_secure_message/templates/email_secure_message.tpl:3
+msgid "Hello from"
+msgstr "Hola de"
+
+#: user/modules/mod_secure_message/templates/email_secure_message.tpl:8
+msgid "Hi,"
+msgstr "Hola,"
+
+#: user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:14
+msgid "Message"
+msgstr "Mensaje"
+
+#: user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:33
+msgid "Nickname, or name you want us to call you."
+msgstr "Apodo, o nombre por el que quieres que te llamemos."
+
+#: user/modules/mod_secure_message/templates/page_secure_message.tpl:53
+msgid "Not Found"
+msgstr "No encontrado"
+
+#: user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:42
+msgid "On a reply, you will receive a link to this site."
+msgstr "En respuesta, usted recibirá un enlace a este sitio."
+
+#: user/modules/mod_secure_message/templates/email_secure_message.tpl:13
+msgid "Please go to the link below for the information that you requested."
+msgstr ""
+"Por favor entra al enlace de abajo para ver la información que pediste."
+
+#: user/modules/mod_secure_message/mod_secure_message.erl:110
+msgid "Reload"
+msgstr "Recargar"
+
+#: user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:12
+msgid "Reply"
+msgstr "Respuesta"
+
+#: user/modules/mod_secure_message/templates/page_secure_message.tpl:9
+msgid "Secure message"
+msgstr "Mensaje seguro"
+
+#: user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:76
+msgid "Send &amp; Delete Message"
+msgstr "Enviar y borrar mensaje"
+
+#: user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:78
+msgid "Send Message"
+msgstr "Enviar mensaje"
+
+#: user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:75
+msgid "Send Reply"
+msgstr "Enviar Respuesta"
+
+#: user/modules/mod_secure_message/mod_secure_message.erl:49
+msgid "Sorry, could not delete the message"
+msgstr "Lo sentimos, no se puede eliminar el mensaje"
+
+#: user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:59
+msgid "State"
+msgstr "Estado"
+
+#: user/modules/mod_secure_message/templates/page_secure_message.tpl:20
+msgid "Subject"
+msgstr "Asunto"
+
+#: user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:86
+msgid "Thank you."
+msgstr "Gracias."
+
+#: user/modules/mod_secure_message/templates/email_secure_message.tpl:19
+msgid "Thanks."
+msgstr "Gracias."
+
+#: user/modules/mod_secure_message/templates/page_secure_message.tpl:35
+msgid "This message will be deleted in"
+msgstr "Este mensaje se borrará en"
+
+#: user/modules/mod_secure_message/templates/email_secure_message.tpl:11
+msgid ""
+"To protect your privacy, we have answered your question at a safe place for "
+"you to read."
+msgstr ""
+"Para proteger tu privacidad, hemos contestado tu pregunta en un espacio en "
+"el que es seguro para ti leerla."
+
+#: user/modules/mod_secure_message/templates/email_secure_message.tpl:26
+msgid ""
+"You can not reply to this email. Please reply at the link in the message."
+msgstr ""
+"No puede contestar a este correo electrónico. Por favor, responda en el "
+"enlace en el mensaje."
+
+#: user/modules/mod_secure_message/templates/page_secure_message.tpl:47
+msgid "You can’t reply directly to this message."
+msgstr "Usted no puede responder directamente a este mensaje."
+
+#: user/modules/mod_secure_message/templates/page_secure_message.tpl:14
+msgid "You received a message:"
+msgstr "Has recibido un mensaje:"
+
+#: user/modules/mod_secure_message/templates/email_secure_message.tpl:10
+msgid "You recently sent a question to our service."
+msgstr "Recientemente enviaste una pregunta a nuestro servicio."
+
+#: user/modules/mod_secure_message/templates/email_secure_message.tpl:27
+msgid ""
+"Your email address will be automatically removed from our messaging service."
+msgstr ""
+"Su dirección de correo electrónico se eliminará automáticamente de nuestro "
+"servicio de mensajería."
+
+#: user/modules/mod_secure_message/templates/page_secure_message.tpl:64
+msgid "Your message has been deleted."
+msgstr "El Mensaje ha sido borrado."
+
+#: user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:87
+msgid "Your message has been sent, we will contact you as soon as possible."
+msgstr ""
+"Su mensaje ha sido enviado, nos pondremos en contacto tan pronto como sea "
+"posible."
+
+#: user/modules/mod_secure_message/templates/_secure_message_reply_form.tpl:21
+msgid "Your reply will be forwarded to"
+msgstr "Su respuesta será enviada al"
+
+#: user/modules/mod_secure_message/templates/page_secure_message.tpl:30
+msgid "ago"
+msgstr "hace"
+
+#: user/modules/mod_secure_message/templates/page_secure_message.tpl:36
+msgid "delete now"
+msgstr "elimina ahora"
+
+#: user/modules/mod_secure_message/templates/page_secure_message.tpl:30
+msgid "viewed since"
+msgstr "visto desde el"
+
+#~ msgid "Last name"
+#~ msgstr "Apellidos"
