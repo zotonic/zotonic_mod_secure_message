@@ -1,6 +1,6 @@
 {% extends "email_base.tpl" %}
 
-{% block title %}{_ Hello from _} {{ m.site.title }}{% endblock %}
+{% block title %}{_ Hello from _} {{ m.site.title|escape }}{% endblock %}
 
 {% block content %}
 
@@ -12,7 +12,7 @@
     <br/>
     {_ Please go to the link below for the information that you requested. _}<br/>
     <br/>
-    <a href="{{ url }}">{{ url }}</a><br/>
+    <a href="{{ url|sanitize_url|escape }}">{{ url|escape }}</a><br/>
     <br/>
     {_ For your security, our message will be deleted in 7 days. Please check the link above as soon as possible. _}<br/>
     <br/>
