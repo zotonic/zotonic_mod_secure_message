@@ -18,6 +18,73 @@
 %% limitations under the License.
 
 -module(mod_secure_message).
+-moduledoc(#{
+    zotonic_keywords => [
+        "reference", "site_administrator", "integrator", "module",
+        "email", "api_and_integration", "configuration", "privacy"
+    ]
+}).
+-moduledoc("
+Store short-lived messages on the site and email recipients a signed link
+instead of the message body. Recipients can read, reply to and delete a
+message without logging in. Replies and delivery/read events are sent to
+an external service as JSON.
+
+## Setup and configuration
+
+Enable `mod_secure_message` on a database-backed site with outgoing email
+configured. Schema installation creates `secure_message` and
+`secure_message_event`. The supplied pages use the site's `base.tpl`,
+`email_base.tpl`, Zotonic wires and localization templates. Customize
+`email_secure_message.tpl` for the site's notification text.
+
+Senders use the `m_secure_message` relay API and need `use` permission for
+`mod_secure_message`. HTTP access uses Zotonic's standard model API and its
+configured authentication. Recipient access instead requires the complete
+signed link. Both page dispatch rules request HTTPS:
+
+- `secure_message_view`: `/secure/msg/<key>/<signature>`.
+- `secure_message_form`: `/secure/msg`, a form for a new contact message.
+
+Per-site configuration values are:
+
+| Key under `mod_secure_message` | Purpose |
+| --- | --- |
+| `event_url` | Default JSON callback URL for contact-form messages and events without a message-specific `reply_url`. |
+| `sign_key_secret` | Site secret used to sign links; generated and saved on first use if empty. Changing it invalidates existing links. |
+| `log_cleanup` | If true, hourly cleanup also deletes rows older than seven days from the site's `log` and `log_email` tables. Defaults to disabled. |
+
+Callbacks use `z_fetch` in the context of user 1. Configure any destination
+credentials through Zotonic's URL-fetch authentication integration. This
+module does not read the legacy `event_oauth_key` or `event_oauth_secret`
+settings and does not itself sign outgoing requests with OAuth 1.
+
+## Message lifetime and events
+
+Messages expire seven days after insertion. Expired links stop working at
+expiry; the hourly `tick_1h` observer removes expired database rows. Reading
+does not extend the expiry. Recipient deletion removes the row immediately;
+associated message-event rows are deleted by the database's cascading
+foreign key.
+
+Reading logs the peer address and user agent, records the first-open time,
+and queues a `read` event. Email notifications produce `sent`, `failed` and
+`bounced` callbacks for known outgoing messages; `sender_disabled` failures
+are ignored. Replies queue a `reply` event, optionally followed by deletion.
+The page shows a reply form only when the message has a `reply_url`.
+
+Callbacks are queued for delivery after one second. Failed HTTP requests
+are rescheduled after 1800 seconds. The form's success display means the
+event was queued, not that the receiving service accepted it.
+
+## Storage and link access
+
+The message HTML is sanitized before storage. Payloads are serialized Erlang
+terms in a database bytea column; encryption is not implemented. Possession
+of the signed link permits reading, replying and deletion until expiry.
+Deletion covers the live message and its event rows, not database backups,
+external callback copies or unrelated logs.
+").
 
 -mod_author("Marc Worrell <marc@worrell.nl>").
 -mod_title("Secure email message reading").

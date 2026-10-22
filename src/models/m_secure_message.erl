@@ -18,6 +18,99 @@
 %% limitations under the License.
 
 -module(m_secure_message).
+-moduledoc(#{
+    zotonic_keywords => [
+        "reference", "backend_developer", "integrator", "model",
+        "email", "api_and_integration", "privacy", "scheduled_and_background_work"
+    ]
+}).
+-moduledoc("
+Relay messages, resolve signed links and queue callbacks for
+`mod_secure_message`. Message records are returned as atom-keyed property
+lists; relay requests and callback payloads use binary-keyed maps.
+
+## Relay API
+
+POST JSON to `/api/model/secure_message/post/relay`, or call the model with
+path `[<<\"relay\">>]` and `#{payload => Payload}`. This entry point requires
+`z_acl:is_allowed(use, mod_secure_message, Context)`; denial returns
+`{error, eacces}`. The API transport has its own authentication and topic ACLs.
+
+Required payload fields are `recipient`, `sender`, `subject` and `message`.
+Optional fields are `reply_url`, `status_url`, `message_id` and `language`.
+`message` is sanitized HTML. Invalid or omitted language values fall back to
+the context language. `status_url` is stored but is not used for delivery:
+all message events go to `reply_url`, falling back to the configured
+`event_url` when the reply URL is undefined.
+
+```erlang
+m_secure_message:m_post([<<\"relay\">>], #{payload => #{
+    <<\"recipient\">> => <<\"reader@example.com\">>,
+    <<\"sender\">> => <<\"Support\">>,
+    <<\"subject\">> => <<\"Your answer\">>,
+    <<\"message\">> => <<\"<p>Here is your answer.</p>\">>,
+    <<\"message_id\">> => <<\"case-123\">>
+}}, Context).
+```
+
+The successful model result is
+`{ok, #{<<\"status\">> => <<\"ok\">>, <<\"result\">> =>
+#{<<\"message_id\">> => Id}}}`. `Id` is the supplied message ID, or the generated
+message key when omitted. This confirms insertion; notification-email errors
+are recorded but do not turn the relay result into an error. Required fields
+are pattern-matched, not checked by a structured payload validator.
+
+## Signed-link lookup
+
+`m.secure_message.qlookup` reads the request's `key` and `signature`, checks
+the signature and expiry, and returns the message property list with
+`view_count`. For example, within the signed-link page:
+
+```django
+{% if m.secure_message.qlookup as msg %}
+    {{ msg.subject|escape }}
+    {{ msg.message|sanitize_html }}
+{% endif %}
+```
+
+Lookup records a view, updates first-open information and queues a `read`
+event. It is not a side-effect-free query. `m_get/3` returns
+`{ok, {Message, Rest}}` or `{error, enoent}`; unsupported paths also return
+`enoent`. No logged-in user is required for valid signed-link access.
+
+## Direct Erlang calls
+
+- `insert(Props, Context)` accepts atom-keyed properties with the same required
+  fields as relay, stores the message and sends the notification. It returns
+  `{ok, GeneratedKey}` (a binary, not the numeric database ID) or an error.
+- `get_url(Id, Context)` takes a numeric database ID and returns `{ok, Url}`
+  for an unexpired message, otherwise `{error, notfound}`.
+- `fetch_by_key(Key, Signature, Context)` returns `{ok, Props}`,
+  `{error, notfound}` for unknown/expired keys, or `{error, signature}` for an
+  invalid signature. Unlike `qlookup`, it does not record a successful view.
+- `delete(Key, Signature, Context)` checks signed-link access before deletion.
+  `delete(Id, Context)` deletes by numeric ID without an ACL check.
+- `send_link(Id, Context)` resends the notification for a numeric database ID.
+
+Direct insertion, URL generation, resend and numeric-ID deletion are trusted
+server APIs and do not repeat the relay entry point's ACL check.
+
+## Callback delivery
+
+`send_message_event/3` accepts a decoded message property list or the binary
+outgoing email ID stored as `sent_message_id`. The latter is distinct from
+the caller's `message_id` and the generated link key. It adds `message_id`
+and `recipient` to the event map and queues a JSON POST to `reply_url`.
+`send_generic_event/2` queues a payload for the default `event_url`.
+
+Event names are `read`, `reply`, `sent`, `failed`, `bounced`, and `message`
+for the standalone contact form. Replies add `subject`, `message` and
+`language`; delivery events may add `is_final` and `status`. Queued failures
+retry after 1800 seconds. A missing default URL returns `{error, url}`.
+`send_test_event/1` immediately posts a `test` event to the default URL.
+All HTTP calls use `z_fetch` as user 1; authentication comes from configured
+URL-fetch integrations, not module-specific OAuth consumer keys.
+").
 
 -export([
     m_get/3,
